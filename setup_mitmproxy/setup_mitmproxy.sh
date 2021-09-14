@@ -7,9 +7,9 @@ if [ "$#" -eq 2 -a "$1" = "on" ]; then
   expr "$input" + 1 >&/dev/null
   ret=$?
   if [ $ret -lt 2 ];then
-    # networksetup -setwebproxy Wi-Fi "" $input
-    # networksetup -setsecurewebproxy Wi-Fi "" $input
-    echo "U can use poat :$input"
+    networksetup -setwebproxy Wi-Fi "" $input
+    networksetup -setsecurewebproxy Wi-Fi "" $input
+    echo "U can use port :$input"
     exit 0
   else
     echo "ポートの指定が不正です。"
